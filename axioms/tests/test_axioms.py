@@ -11,7 +11,7 @@ test_axioms.py — wudao-core axiom 接口测试
 import sys
 from pathlib import Path
 
-# 确保 axioms 在 import 路径
+# Ensure axioms on import path
 _ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_ROOT))
 

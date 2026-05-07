@@ -20,4 +20,6 @@ jobs:
 
       - name: Run axiom tests
         run: |
-          cd axioms/tests && python3 test_axioms.py
+          # Mock wukong/memory directory (expected by axiom8_causal.py path layout)
+          mkdir -p wukong/memory
+          python3 axioms/tests/test_axioms.py 2>&1
