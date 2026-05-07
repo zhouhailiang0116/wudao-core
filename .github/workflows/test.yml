@@ -20,6 +20,9 @@ jobs:
 
       - name: Run axiom tests
         run: |
-          # Mock wukong/memory directory (expected by axiom8_causal.py path layout)
+          # Debug: show repo structure
+          pwd && ls -la && ls wukong/ 2>/dev/null || echo "wukong/ missing"
+          # Create wukong/memory if missing (required by axiom8_causal.py path layout)
           mkdir -p wukong/memory
+          echo "After mkdir:" && ls wukong/
           python3 axioms/tests/test_axioms.py 2>&1
