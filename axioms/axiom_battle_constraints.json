@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generated_at": "2026-05-06 21:09",
+    "generated_by": "axiom_battle engine v1",
+    "source": "wukong/wukong_causality/axiom_battle.py",
+    "total_battles": 13,
+    "battle_pairs_tested": 13,
+    "description": "公理对抗赛战果——每个公理的冲突关系、失效条件和域约束。由 battle 引擎自动生成，供道层 axiom 定义引用。"
+  },
+  "conflict_summary": {
+    "total_pairs": 13,
+    "all_verified": true,
+    "dominant_judgment": "MODIFIED",
+    "universal_inverse_ratio": 0.9091,
+    "universal_observation": "所有公理对在极端强度(0.95,0.95)下均触发冲突——说明八公理体系内部存在结构性张力，非bug，是设计意图：约束碰撞处即是悟道处。"
+  },
+  "axioms": {
+    "1": {
+      "name": "生长",
+      "en_name": "growth",
+      "priority": 7,
+      "total_battles": 2,
+      "judgments": {"MODIFIED": 2},
+      "avg_intensity": 0.091,
+      "conflict_with": [7, 6],
+      "opposite_claims": [
+        {"my_claim": "concentrate", "opposite_claim": "dissipate", "opponent_axiom": 7},
+        {"my_claim": "focus", "opposite_claim": "spread", "opponent_axiom": 7},
+        {"my_claim": "intensify", "opposite_claim": "soften", "opponent_axiom": 3},
+        {"my_claim": "heat_up", "opposite_claim": "cool_down", "opponent_axiom": 2}
+      ],
+      "domain_constraints": "生长公理在内容节奏域(时序能量分布)表现稳定，但在视觉纹理域中 GameOfLife 涌现比与 Sobel 边缘强度需区分；在基因表达域中 PC1 综合轴已验证跨域同构",
+      "failure_conditions": "当自由公理强度>0.7时，生长约束被压制——节奏被打破；当边界公理强度>0.7时，生长结构的可塑性受限",
+      "wudao_core_status": "MODIFIED — 需在 axiom1_growth.py 中增加 domain_guard: 区分内容节奏域 vs 视觉纹理域"
+    },
+    "2": {
+      "name": "光影",
+      "en_name": "lighting",
+      "priority": 1,
+      "total_battles": 4,
+      "judgments": {"MODIFIED": 4},
+      "avg_intensity": 0.091,
+      "conflict_with": [7, 3, 5],
+      "opposite_claims": [
+        {"my_claim": "cool_down", "opposite_claim": "heat_up", "opponent_axiom": 3},
+        {"my_claim": "soften", "opposite_claim": "intensify", "opponent_axiom": 5},
+        {"my_claim": "free", "opposite_claim": "constrain", "opponent_axiom": 8}
+      ],
+      "domain_constraints": "光影公理在渲染域(Rembrandt/五调子/SSS)是最高优先级公理，但在AI绘画prompt域中其控制力下降(扩散模型自行决策光照)",
+      "failure_conditions": "与色彩公理冲突时：暖色温(2700K)与高饱和暖色冲突→推荐色温补偿；与叙事公理冲突时：强聚光与叙事发散相悖；与自由公理冲突时：Rembrandt强约束与free_composition相斥",
+      "wudao_core_status": "MODIFIED — axiom2_light.py 中的色温预设需增加冲突回避规则"
+    },
+    "3": {
+      "name": "色彩",
+      "en_name": "color",
+      "priority": 6,
+      "total_battles": 3,
+      "judgments": {"MODIFIED": 3},
+      "avg_intensity": 0.091,
+      "conflict_with": [5, 4, 2],
+      "opposite_claims": [
+        {"my_claim": "soften", "opposite_claim": "intensify", "opponent_axiom": 5},
+        {"my_claim": "heat_up", "opposite_claim": "cool_down", "opponent_axiom": 2},
+        {"my_claim": "concentrate", "opposite_claim": "dissipate", "opponent_axiom": 7}
+      ],
+      "domain_constraints": "色彩公理在调色板域内稳定(harmony/contrast/saturation)，但与光照色温交叉时需联合求解；在基因表达域中无直接对应",
+      "failure_conditions": "与叙事公理冲突时：柔化(soften)与叙事强化(intensify)对立——推荐按场景选择主导方；与光影公理冲突时：高饱和+强对比=视觉过载",
+      "wudao_core_status": "MODIFIED — axiom3_color.py 需增加与光照的联合约束(joint saturation-temperature model)"
+    },
+    "4": {
+      "name": "布局",
+      "en_name": "layout",
+      "priority": 5,
+      "total_battles": 2,
+      "judgments": {"MODIFIED": 2},
+      "avg_intensity": 0.091,
+      "conflict_with": [7, 3],
+      "opposite_claims": [
+        {"my_claim": "balance", "opposite_claim": "tilt", "opponent_axiom": 7},
+        {"my_claim": "concentrate", "opposite_claim": "dissipate", "opponent_axiom": 7},
+        {"my_claim": "structure", "opposite_claim": "chaos", "opponent_axiom": 7}
+      ],
+      "domain_constraints": "布局公理在版面域内稳定(黄金分割/三分法/对称)，但与自由公理(free_composition)天然冲突——这是设计意图；在基因数据中无直接对应",
+      "failure_conditions": "与自由公理冲突时：layout_x/y约束与free_composition直接冲突→需裁决优先方或取折中点",
+      "wudao_core_status": "MODIFIED — axiom4_layout.py 需增加 freedom_tradeoff 参数: 0=严格布局, 1=自由构图"
+    },
+    "5": {
+      "name": "叙事",
+      "en_name": "narrative",
+      "priority": 4,
+      "total_battles": 2,
+      "judgments": {"MODIFIED": 2},
+      "avg_intensity": 0.091,
+      "conflict_with": [7, 3],
+      "opposite_claims": [
+        {"my_claim": "concentrate", "opposite_claim": "dissipate", "opponent_axiom": 7},
+        {"my_claim": "focus", "opposite_claim": "spread", "opponent_axiom": 7},
+        {"my_claim": "intensify", "opposite_claim": "soften", "opponent_axiom": 3}
+      ],
+      "domain_constraints": "叙事公理在内容域稳定(节奏/焦点/情感弧)，但在纯视觉域中通过 edge_density 间接度量时存在 PIL 噪声假相关风险(已由5/4 battle处决)",
+      "failure_conditions": "与自由公理冲突时：叙事聚焦(concentrate/focus)与自由发散(dissipate/spread)完全对立→需场景裁判；与色彩公理冲突时：强叙事(intensify)与柔和色彩(soften)互斥",
+      "wudao_core_status": "MODIFIED — edge_density→narrative 已被 battle 处决为假相关，axiom5_narrative.py 需移除该指标"
+    },
+    "6": {
+      "name": "边界",
+      "en_name": "boundary",
+      "priority": 3,
+      "total_battles": 3,
+      "judgments": {"MODIFIED": 3},
+      "avg_intensity": 0.091,
+      "conflict_with": [7, 5, 1],
+      "opposite_claims": [
+        {"my_claim": "structure", "opposite_claim": "chaos", "opponent_axiom": 7},
+        {"my_claim": "constrain", "opposite_claim": "free", "opponent_axiom": 7},
+        {"my_claim": "concentrate", "opposite_claim": "dissipate", "opponent_axiom": 7}
+      ],
+      "domain_constraints": "边界公理定义 must/cannot/can 三层约束空间。在视觉域稳定(边界检测/边缘强度)，但在抽象概念域(如'什么是美')边界模糊",
+      "failure_conditions": "与自由公理冲突时：stricture→free 是结构性的(不是bug)，碰撞处即悟道定理触发点；与叙事/生长冲突时：约束密度过高会压制创造力——需 adaptive constraint_density",
+      "wudao_core_status": "MODIFIED — 边界估算器 V2 已从三层因子重建(MAE 0.938→0.431)，但仍需真实数据进一步校准"
+    },
+    "7": {
+      "name": "自由",
+      "en_name": "freedom",
+      "priority": 7,
+      "total_battles": 7,
+      "judgments": {"ALIVE": 7},
+      "avg_intensity": 1.0,
+      "conflict_with": [1, 2, 3, 4, 5, 6, 8],
+      "opposite_claims": [
+        {"my_claim": "dissipate", "opposite_claim": "concentrate", "opponent_axiom": 5},
+        {"my_claim": "spread", "opposite_claim": "focus", "opponent_axiom": 5},
+        {"my_claim": "chaos", "opposite_claim": "structure", "opponent_axiom": 6},
+        {"my_claim": "tilt", "opposite_claim": "balance", "opponent_axiom": 4},
+        {"my_claim": "free", "opposite_claim": "constrain", "opponent_axiom": 8}
+      ],
+      "domain_constraints": "自由公理在所有域中表现为反约束力——它是公理体系的'压力测试者'。自由本身不产生结构，但释放被过度约束的空间。freedom_space = 1 - constraint_density",
+      "failure_conditions": "自由公理永远不会'失败'(它在13场battle中全部存活的对手方)——但它的存在本身就是对其他公理的挑战，触发悟道定理的核心张力",
+      "wudao_core_status": "ALIVE(作为被告从未出战)——但它是体系中最'危险'的公理: 它不直接定义美, 却决定了其他所有公理的定义域边界"
+    },
+    "8": {
+      "name": "因果",
+      "en_name": "causality",
+      "priority": 2,
+      "total_battles": 3,
+      "judgments": {"MODIFIED": 3},
+      "avg_intensity": 0.091,
+      "conflict_with": [2, 7],
+      "opposite_claims": [
+        {"my_claim": "constrain", "opposite_claim": "free", "opponent_axiom": 7},
+        {"my_claim": "structure", "opposite_claim": "chaos", "opponent_axiom": 7},
+        {"my_claim": "intensify", "opposite_claim": "soften", "opponent_axiom": 3}
+      ],
+      "domain_constraints": "因果公理在基因表达域表现最佳(3/5 ground truth 命中, PC1 跨域同构)，在视觉域受限于统计相关与因果的混淆(尤其是 PIL 噪声)；需区分: Fisher-z 患者内lag(基因) vs Pearson 全局(视觉)",
+      "failure_conditions": "与光影公理冲突时：图像域90.9%反向帧——因果在视觉域的当前定义域太宽，需缩小到真正因果链(非统计相关)；与自由公理冲突时：因果链(constrain)与自由探索(free)互斥",
+      "wudao_core_status": "MODIFIED(最严重)——在视觉域几乎被光影完全击穿。需在 axiom8_causal.py 中增加 domain_gate: 视觉域降级到 correlational(弱因果), 基因域保持 causal(强因果)"
+    }
+  },
+  "key_insights": {
+    "insight_1": "自由(axiom7)是通用对立面——它不与任何公理'合作'，而是挑战所有公理的约束边界。这符合悟道定理：镣铐的重量是自由测出来的。",
+    "insight_2": "因果(axiom8)是受创最重的公理——在视觉域仅有9.1%的正向帧。需 domain_gate 拆分视觉(弱因果)和基因(强因果)。",
+    "insight_3": "所有公理在极端强度均被标记 MODIFIED——这不是系统性缺陷，而是公理体系的结构性张力。约束碰撞处 = 悟道处。",
+    "insight_4": "当前 battle 依赖合成对抗帧(generate_adversary 从 OPPOSITE_PAIRS 生成)，需要真实 causal_log 数据来区分'理论冲突'和'实证冲突'。",
+    "insight_5": "边界 vs 自由是最核心的对立轴——must/cannot/can 约束空间 vs freedom_space。悟道定理的一级触发就来自这两者的碰撞。"
+  },
+  "next_actions": {
+    "immediate": [
+      "axiom2_light.py: 增加色温-色彩冲突回避规则",
+      "axiom5_narrative.py: 移除 edge_density 指标(已被 battle 处决)",
+      "axiom8_causal.py: 增加 domain_gate(视觉/基因 因果强度分级)",
+      "axiom4_layout.py: 增加 freedom_tradeoff 参数"
+    ],
+    "data_driven": [
+      "跑完整 creation_loop 产真实 causal_log 数据",
+      "用真实数据替代 synthetic adversary frames",
+      "区分'理论冲突'vs'实证冲突'——当前全是理论冲突"
+    ]
+  }
+}

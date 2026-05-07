@@ -1,0 +1,82 @@
+{
+  "version": "v8",
+  "skills": {
+    "camera_vision": {
+      "desc": "摄像头视觉感知",
+      "level": 2,
+      "learned": "2026-04-03"
+    },
+    "opencv_detection": {
+      "desc": "OpenCV颜色/形状/人脸检测",
+      "level": 2,
+      "learned": "2026-04-03"
+    },
+    "narrative_comic": {
+      "desc": "四格漫画叙事结构：铺垫→触发→爆发→反转",
+      "level": 2,
+      "learned": "2026-04-03"
+    },
+    "pillow_comic": {
+      "desc": "Pillow画漫画：对话框/思考气泡/网格点阵/圆角矩形",
+      "level": 2,
+      "learned": "2026-04-03"
+    },
+    "asset_analysis": {
+      "desc": "素材库分析：亮度/色调/构图/风格提取",
+      "level": 2,
+      "learned": "2026-04-03"
+    },
+    "restraint_color": {
+      "desc": "配色克制：主色80%+辅色15%+点缀5%",
+      "level": 1,
+      "learned": "2026-04-03"
+    },
+    "grid_layout": {
+      "desc": "网格对齐：8/16/24间距体系",
+      "level": 1,
+      "learned": "2026-04-03"
+    }
+  },
+  "lessons": [
+    {
+      "text": "Pillow的getsize改名为getbbox，用font.getbbox(text)[2]获取宽度",
+      "date": "2026-04-03"
+    },
+    {
+      "text": "Pillow的rounded_rectangle radius参数用r=或radius=",
+      "date": "2026-04-03"
+    },
+    {
+      "text": "Python字符串中的中文路径在某些环境下读取失败",
+      "date": "2026-04-03"
+    }
+  ],
+  "creations": [
+    {
+      "name": "悟空v1-v8",
+      "desc": "从键盘控制到摄像头视觉的进化路径",
+      "date": "2026-04-03"
+    },
+    {
+      "name": "灵感猎人v1",
+      "desc": "pygame版四格漫画",
+      "date": "2026-04-03"
+    },
+    {
+      "name": "灵感猎人v3",
+      "desc": "Pillow漫画版：对话框/思考气泡/点阵",
+      "date": "2026-04-03"
+    },
+    {
+      "name": "灵感猎人大师版",
+      "desc": "克制配色+网格对齐+叙事结构",
+      "date": "2026-04-03"
+    },
+    {
+      "name": "灵感猎人叙事版",
+      "desc": "四格叙事：铺垫→触发→爆发→反转",
+      "date": "2026-04-03"
+    }
+  ],
+  "last_update": "2026-04-03 17:04"
+}
